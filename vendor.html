@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Dashboard | Apna Bazaar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container">
+    <h1 class="page-title">Vendor Dashboard</h1>
+    <div id="vendor-stats" class="stat-grid"></div>
+    <div class="card" id="product-form-box">
+      <h2 id="form-title">Add New Product</h2>
+      <div id="vendor-errors" class="error-box" style="display:none"></div>
+      <form id="product-form" novalidate>
+        <div class="form-row">
+          <div><label for="p-name">Product Name</label><input type="text" id="p-name"></div>
+          <div><label for="p-category">Category</label><select id="p-category"></select></div>
+        </div>
+        <div class="form-row">
+          <div><label for="p-price">Price (₹)</label><input type="number" id="p-price" min="1" step="0.5"></div>
+          <div><label for="p-stock">Available Stock</label><input type="number" id="p-stock" min="0" step="1"></div>
+        </div>
+        <div class="form-row">
+          <div><label for="p-vendor">Vendor Name</label><input type="text" id="p-vendor" list="vendor-names"><datalist id="vendor-names"></datalist></div>
+          <div><label for="p-image">Image URL (optional)</label><input type="text" id="p-image" placeholder="images/apple.svg or https://..."></div>
+        </div>
+        <label for="p-description">Description</label>
+        <textarea id="p-description" rows="2"></textarea>
+        <button type="submit" class="btn" id="save-button">Add Product</button>
+        <button type="button" class="btn btn-outline" id="cancel-edit" style="display:none">Cancel Edit</button>
+      </form>
+    </div>
+    <h2 class="section-title">Manage Products</h2>
+    <div class="table-wrap" id="product-table"></div>
+    <h2 class="section-title">Customer Orders</h2>
+    <div class="table-wrap" id="order-table"></div>
+  </main>
+  <div id="footer"></div>
+  <script src="js/main.js"></script>
+  <script src="js/vendor.js"></script>
+</body>
+</html>
